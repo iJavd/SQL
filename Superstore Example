@@ -1,3 +1,5 @@
+Base database for pratice work
+
 CREATE TABLE superstore (
     item_id INTEGER PRIMARY KEY,
     item_name TEXT,
@@ -26,18 +28,23 @@ VALUES
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
 
+Queries
+
+#1 What are the items and prices in thios store?
 SELECT item_name, price
 FROM superstore
 ORDER BY price;
 
+#2 Average price of all items?
 SELECT SUM(price)
 FROM superstore;
 
+#3 How many items do we have in stock right now?
 SELECT stock_quantity,item_name
 FROM superstore
 ORDER BY stock_quantity desc;
 
-
+#5 What items do we need to restock soon?
 SELECT stock_quantity, item_name
 FROM superstore
 WHERE stock_quantity<50
